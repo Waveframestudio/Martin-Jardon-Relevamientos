@@ -1,0 +1,279 @@
+.services-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Category Filter Tabs */
+.category-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.filter-btn.is-active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3);
+}
+
+/* Services Accordion List */
+.services-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-accordion-card {
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-accordion-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.service-accordion-card.is-expanded {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.2);
+}
+
+/* Header Row */
+.accordion-header {
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+.accordion-header:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.service-accordion-card.is-expanded .accordion-header {
+  background: rgba(56, 189, 248, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.service-icon-box {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.service-accordion-card:hover .service-icon-box,
+.service-accordion-card.is-expanded .service-icon-box {
+  background: var(--accent-cyan);
+  color: #070d18;
+}
+
+.accordion-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.accordion-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-badge {
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: var(--radius-full);
+  color: var(--accent-cyan);
+  line-height: 1.2;
+}
+
+.category-mini-badge {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.accordion-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.accordion-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accordion-action-hint {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+
+.accordion-chevron {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.service-accordion-card.is-expanded .accordion-chevron {
+  background: rgba(56, 189, 248, 0.2);
+  color: #ffffff;
+}
+
+/* Accordion Body */
+.accordion-body {
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.25s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion-full-desc {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.accordion-benefits-box {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 22px;
+}
+
+.benefits-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.accordion-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accordion-wa-btn {
+  padding: 10px 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 16px 18px;
+  }
+  .accordion-action-hint {
+    display: none;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .accordion-body {
+    padding: 18px 16px;
+  }
+  .accordion-footer {
+    justify-content: stretch;
+  }
+  .accordion-wa-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .accordion-header-left {
+    gap: 12px;
+  }
+  .service-icon-box {
+    width: 40px;
+    height: 40px;
+  }
+  .accordion-card-title {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gradCheck" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded Base Card -->
+  <rect x="8" y="8" width="84" height="84" rx="20" fill="url(#gradBg)" />
+  <!-- Stylized M outline / bars -->
+  <path d="M26 68V34L40 50L54 34V68" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.4" />
+  <!-- Checkmark slash dynamic -->
+  <path d="M34 52L46 64L76 28" stroke="url(#gradCheck)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
