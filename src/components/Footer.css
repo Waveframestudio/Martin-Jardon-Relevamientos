@@ -62,7 +62,7 @@
   transform: translateX(4px);
 }
 
-.saimo-footer-box {
+.audit-footer-box {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: var(--radius-md);
@@ -73,13 +73,13 @@
   margin-bottom: 16px;
 }
 
-.saimo-footer-box strong {
+.audit-footer-box strong {
   display: block;
   font-size: 0.88rem;
   color: #ffffff;
 }
 
-.saimo-footer-box p {
+.audit-footer-box p {
   font-size: 0.74rem;
   color: var(--text-muted);
   line-height: 1.4;

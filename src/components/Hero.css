@@ -82,6 +82,26 @@
   max-width: 580px;
 }
 
+.hero-app-link {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  display: inline;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.hero-app-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -105,12 +125,6 @@
   transition: all var(--transition-normal);
 }
 
-.btn-hero-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.6);
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-}
-
 .btn-hero-secondary {
   display: inline-flex;
   align-items: center;
@@ -125,9 +139,17 @@
   transition: all var(--transition-normal);
 }
 
-.btn-hero-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent-cyan);
+@media (hover: hover) and (pointer: fine) {
+  .btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(2, 132, 199, 0.6);
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  }
+
+  .btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-cyan);
+  }
 }
 
 .hero-value-props {

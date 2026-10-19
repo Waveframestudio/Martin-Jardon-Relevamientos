@@ -25,13 +25,13 @@ export default function Navbar() {
 
   return (
     <header className={`navbar-header ${scrolled ? 'is-scrolled' : ''}`}>
-      {/* Top Banner with SAIMO membership and direct status */}
+      {/* Top Banner with direct status and coverage */}
       <div className="navbar-top-bar">
         <div className="container top-bar-content">
           <div className="top-bar-left">
-            <span className="badge-saimo">
+            <span className="badge-audit-quality">
               <ShieldCheck size={14} className="badge-icon" />
-              Asociado a SAIMO • Sociedad Argentina de Investigadores de Marketing y Opinión
+              Estándares Normativos de Alta Calidad • Supervisión Directa
             </span>
           </div>
           <div className="top-bar-right">

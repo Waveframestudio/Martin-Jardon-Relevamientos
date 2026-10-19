@@ -27,12 +27,12 @@ export default function About() {
     {
       step: '02',
       title: 'Validación Metodológica',
-      desc: 'Control de consistencia y protocolos bajo rigurosos estándares normativos de SAIMO.'
+      desc: 'Control de consistencia y protocolos bajo rigurosos estándares normativos de alta calidad.'
     },
     {
       step: '03',
       title: 'Entrega en Tablas & BI',
-      desc: 'Reportes ejecutivos inmediatos en tablas dinámicas, Excel o dashboards analíticos listos para decidir.'
+      desc: 'Tablas dinámicas y/o planilla Excel listos para trabajarlos a la preferencia del Cliente.'
     }
   ];
 
@@ -40,7 +40,7 @@ export default function About() {
     {
       icon: <Zap size={24} />,
       title: "Información en Tiempo Real",
-      desc: "Datos disponibles antes, durante o después del proceso para un control instantáneo del canal.",
+      desc: "Datos disponibles DURANTE o DESPUÉS del proceso para un control instantáneo del canal.",
       tag: "Velocidad Operativa",
       metric: "< 24 hs",
       metricLabel: "Disponibilidad de datos",
@@ -49,7 +49,7 @@ export default function About() {
     {
       icon: <ShieldCheck size={24} />,
       title: "Supervisión Permanente",
-      desc: "Equipo especializado con controles cruzados en puntos críticos del relevamiento.",
+      desc: "Supervisión directa y rigurosos estándares normativos de alta calidad en puntos críticos.",
       tag: "Rigor Metodológico",
       metric: "100%",
       metricLabel: "Control auditado in-situ",
@@ -60,8 +60,8 @@ export default function About() {
       title: "Logística a Medida",
       desc: "Despliegue ágil en Argentina y Latam con optimización sustancial de costos operativos.",
       tag: "Cobertura Flexible",
-      metric: "10+ Países",
-      metricLabel: "Equipos propios desplegados",
+      metric: "11 Países",
+      metricLabel: "Equipos y operaciones",
       accent: "indigo"
     }
   ];
@@ -96,8 +96,13 @@ export default function About() {
           <h2 className="section-title heading-display">
             Somos su <span className="text-gradient">"Socio Estratégico"</span>
           </h2>
+          <div className="about-manifesto-box glass-panel">
+            <p className="about-primary-quote">
+              "Somos un grupo de personas con experiencia sólida en relevamiento de datos, información y Variables observables adquirida en consultoras de primera línea a través de más de 20 años, con amplios conocimientos en metodologías y técnicas de toma de datos y observación."
+            </p>
+          </div>
           <p className="section-lead">
-            Información de campo precisa por especialistas con supervisión in-situ y entrega instantánea.
+            Nuestros servicios aplican al exacto requerimiento del Cliente, adaptando o diseñando la metodología a aplicar en el Campo, según sea la necesidad.
           </p>
         </div>
 

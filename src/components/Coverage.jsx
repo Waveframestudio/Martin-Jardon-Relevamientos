@@ -89,9 +89,23 @@ export default function Coverage() {
 
             <div className="latam-countries-grid">
               {coverage.latam.map((item, idx) => (
-                <div key={idx} className="latam-country-box">
-                  <span className="country-code-badge">{item.code}</span>
-                  <span className="country-name">{item.country}</span>
+                <div 
+                  key={idx} 
+                  className={`latam-country-box ${item.activeService ? 'latam-country-featured' : ''}`}
+                >
+                  <div className="latam-country-main-row">
+                    <span className="country-code-badge">{item.code}</span>
+                    <span className="country-name">{item.country}</span>
+                    {item.activeService && (
+                      <span className="country-active-tag">Operación Activa</span>
+                    )}
+                  </div>
+                  {item.activeService && (
+                    <div className="country-details-box">
+                      <span className="country-service-title">{item.activeService}</span>
+                      <p className="country-service-desc">{item.reportInfo}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

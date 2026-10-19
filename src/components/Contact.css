@@ -71,10 +71,16 @@
   margin-bottom: 28px;
 }
 
-.btn-whatsapp-direct:hover {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+@media (hover: hover) and (pointer: fine) {
+  .btn-whatsapp-direct:hover {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+  }
+
+  .btn-whatsapp-direct:hover .btn-wa-arrow {
+    transform: translateX(4px);
+  }
 }
 
 .btn-wa-icon-wrap {
@@ -117,10 +123,6 @@
 .btn-wa-arrow {
   flex-shrink: 0;
   transition: transform var(--transition-fast);
-}
-
-.btn-whatsapp-direct:hover .btn-wa-arrow {
-  transform: translateX(4px);
 }
 
 /* Quick Features */
@@ -180,10 +182,12 @@
   transition: all var(--transition-fast);
 }
 
-.contact-touchpoint:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(56, 189, 248, 0.3);
-  transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+  .contact-touchpoint:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateX(4px);
+  }
 }
 
 .touchpoint-icon {

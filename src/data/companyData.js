@@ -3,16 +3,17 @@ export const companyData = {
   subtitle: "Organización de Relevamientos",
   tagline: "La Información por Especialistas",
   association: {
-    name: "SAIMO",
-    fullName: "Sociedad Argentina de Investigadores de Marketing y Opinión",
-    badge: "Miembro Asociado",
+    name: "Auditoría Profesional",
+    fullName: "Rigurosos estándares normativos de alta calidad y rigor metodológico",
+    badge: "Metodología Verificada",
     hasDataFiscal: true
   },
   contact: {
-    phoneFormatted: "(+54 91) 15-5840-8320",
-    phoneRaw: "+54911558408320",
-    whatsappNumber: "54911558408320",
-    whatsappLink: "https://wa.me/54911558408320?text=Hola%20Mart%C3%ADn,%20te%20contacto%20desde%20la%20web%20para%20solicitar%20informaci%C3%B3n%20sobre%20relevamientos.",
+    phoneFormatted: "(+54 911) 5840-8320",
+    phoneRaw: "+5491158408320",
+    whatsappNumber: "5491158408320",
+    whatsappDisplay: "+54 9 11 5840-8320",
+    whatsappLink: "https://wa.me/5491158408320?text=Hola%20Mart%C3%ADn,%20te%20contacto%20desde%20la%20web%20para%20solicitar%20informaci%C3%B3n%20sobre%20relevamientos.",
     email: "info@martinjardon.com.ar",
     skype: "martin.jardon1",
     linkedin: "martin-jardon",
@@ -22,19 +23,19 @@ export const companyData = {
   about: {
     heroLead: "Somos su 'Socio Estratégico'",
     paragraphs: [
-      "Somos un grupo de profesionales con capacitación específica y amplia experiencia en el relevamiento de datos y variables relacionados con Puntos de Venta, Procesos y Procedimientos.",
-      "Nuestra experiencia y constante capacitación nos coloca en el lugar ideal para realizar cualquier tipo de relevamiento de información con el más alto nivel de profesionalismo, rigor metodológico y velocidad de respuesta.",
-      "Trabajamos para hacer de la información una herramienta de utilización instantánea en la toma de decisiones. Por ello disponemos del conocimiento y la tecnología para colocar online e inmediatamente los datos relevados.",
-      "Entregamos la información en sencillas tablas dinámicas, reportes analíticos, planillas Excel o bases de datos customizadas según las preferencias operativas del cliente."
+      "Somos un grupo de personas con experiencia sólida en relevamiento de datos, información y variables observables adquirida en consultoras de primera línea a través de más de 20 años, con amplios conocimientos en metodologías y técnicas de toma de datos y observación.",
+      "Nuestros servicios aplican al exacto requerimiento del Cliente, adaptando o diseñando la metodología a aplicar en el Campo, según sea la necesidad.",
+      "Trabajamos para hacer de la información una herramienta de utilización instantánea en la toma de decisiones. Por ello disponemos del conocimiento y la tecnología para colocar online y de forma inmediata los datos relevados.",
+      "Tablas dinámicas y/o planilla Excel listos para trabajarlos a la preferencia del Cliente, con entrega directa y ágil."
     ],
     highlights: [
       {
         title: "Información en Tiempo Real",
-        desc: "Datos disponibles antes, durante o después del proceso para un control instantáneo."
+        desc: "Datos disponibles DURANTE o DESPUÉS del proceso para un control instantáneo del canal."
       },
       {
         title: "Calidad y Supervisión Permanente",
-        desc: "Equipo de supervisores que realizan controles y seguimientos en puntos críticos del proceso."
+        desc: "Supervisión directa y rigurosos estándares normativos de alta calidad en puntos críticos del proceso."
       },
       {
         title: "Logística a Medida y Eficiencia de Costos",
@@ -115,10 +116,10 @@ export const companyData = {
     {
       id: "rotacion-vencimientos",
       title: "Rotación y Vencimientos",
-      badge: "Gestión de Inventario",
-      shortDesc: "Control minucioso de reposición, estado de productos en exhibición y fechas de caducidad para prevenir mermas.",
-      fullDesc: "Inspección de lotes, vencimientos y rotación en góndola y trastienda. Ayudamos a evitar sanciones, mermas por vencimiento y pérdida de reputación de marca por productos deteriorados.",
-      benefits: ["Prevención de mermas y pérdidas", "Cuidado de la calidad y frescura", "Auditoría del trabajo de repositores"],
+      badge: "Gestión de Salón de Ventas",
+      shortDesc: "Control minucioso de reposición, estado de productos en exhibición y fechas de caducidad exclusivamente en salón de ventas.",
+      fullDesc: "Inspección de lotes, fechas de vencimiento y rotación en salón de ventas y góndola. No realizamos tareas de depósito: nos enfocamos 100% en el frente de venta para evitar mermas, vencimientos y proteger la reputación de marca.",
+      benefits: ["Foco 100% en salón de ventas y góndola", "Prevención de mermas y productos vencidos", "Cuidado de la calidad y rotación visible", "Auditoría del trabajo de repositores"],
       category: "Punto de Venta"
     },
     {
@@ -173,6 +174,12 @@ export const companyData = {
       "Río Gallegos (Santa Cruz)"
     ],
     latam: [
+      { 
+        country: "Perú", 
+        code: "PE", 
+        activeService: "Control de Planogramas y lectura EAN",
+        reportInfo: "Reportes Excel: Categoría, Ítem, Posición en Góndola, Cantidad de Frentes, Precios y Oferta."
+      },
       { country: "Colombia", code: "CO" },
       { country: "Costa Rica", code: "CR" },
       { country: "Ecuador", code: "EC" },
@@ -186,9 +193,9 @@ export const companyData = {
     ],
     highlights: [
       { number: "+20", label: "Provincias y ciudades argentinas cubiertas" },
-      { number: "10+", label: "Países de Latinoamérica con equipos" },
+      { number: "11", label: "Países de Latinoamérica con operaciones" },
       { number: "100%", label: "Supervisión directa y geolocalizada" },
-      { number: "+15", label: "Años de trayectoria comprobada" }
+      { number: "+20", label: "Años de experiencia sólida en consultoría" }
     ]
   },
   clients: [
@@ -221,11 +228,6 @@ export const companyData = {
       name: "Enfoque Retail",
       category: "Investigación & Desarrollo",
       description: "Expertos en retail marketing, auditoría de canal y Trade Marketing."
-    },
-    {
-      name: "Inn Audit S.R.L. / iNn Information Now",
-      category: "Auditoría Operativa",
-      description: "Soluciones de auditoría operativa y control de procesos en campo."
     }
   ]
 };

@@ -26,12 +26,6 @@ export default function Clients() {
       floatDuration: "4.6s"
     },
     {
-      name: "Inn Audit S.R.L. / iNn Information Now",
-      src: "/clientes/Inn Audit S.R.L..webp",
-      floatDelay: "1.8s",
-      floatDuration: "5.2s"
-    },
-    {
       name: "Enfoque Retail",
       src: "/clientes/enfoque_retail-Photoroom.webp",
       floatDelay: "2.4s",
@@ -77,24 +71,24 @@ export default function Clients() {
           ))}
         </div>
 
-        {/* Association & Institutional Trust Banner */}
+        {/* Institutional Trust Banner without SAIMO */}
         <div className="association-banner glass-panel">
           <div className="assoc-content">
             <div className="assoc-icon-wrap">
               <Award size={36} />
             </div>
             <div className="assoc-info">
-              <span className="assoc-badge">{association.badge}</span>
-              <h3 className="assoc-title">{association.name}</h3>
+              <span className="assoc-badge">Garantía Metodológica</span>
+              <h3 className="assoc-title">Estándares Normativos de Alta Calidad</h3>
               <p className="assoc-desc">
-                {association.fullName}. Estricto cumplimiento de los estándares éticos, de confidencialidad y rigor metodológico para la investigación de mercado en la República Argentina.
+                Estricto cumplimiento de protocolos de recolección de datos, confidencialidad absoluta y rigor metodológico para la investigación de mercado en la República Argentina y la región.
               </p>
             </div>
           </div>
           <div className="assoc-seal">
             <div className="seal-badge">
               <ShieldCheck size={28} />
-              <span>DATA FISCAL VERIFICADA</span>
+              <span>SUPERVISIÓN DIRECTA</span>
             </div>
           </div>
         </div>

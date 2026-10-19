@@ -18,7 +18,7 @@ export default function Contact() {
     "Atención inmediata personalizada con Martín Jardón",
     "Cotización ágil sin formularios extensos ni demoras",
     "Presupuestos a medida según plaza geográfica y frecuencia",
-    "Confidencialidad absoluta bajo código ético de SAIMO"
+    "Confidencialidad absoluta bajo rigurosos estándares profesionales"
   ];
 
   return (
@@ -64,7 +64,7 @@ export default function Contact() {
               <div className="btn-wa-text-wrap">
                 <span className="btn-wa-title">Contactar por WhatsApp</span>
                 <span className="btn-wa-sub">Respuesta inmediata</span>
-                <span className="btn-wa-phone">+54 9 11 5584 0832</span>
+                <span className="btn-wa-phone">+54 9 11 5840-8320</span>
               </div>
               <ArrowRight size={20} className="btn-wa-arrow" />
             </a>
@@ -135,7 +135,7 @@ export default function Contact() {
 
             <div className="security-notice">
               <ShieldCheck size={18} className="text-cyan" />
-              <span>Garantía de confidencialidad bajo estándares SAIMO.</span>
+              <span>Garantía de confidencialidad bajo estándares normativos de alta calidad.</span>
             </div>
           </div>
         </div>

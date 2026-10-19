@@ -65,14 +65,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Institutional SAIMO info */}
+          {/* Institutional Quality Accreditation */}
           <div className="footer-col footer-col-institution">
-            <h4 className="footer-col-title">Acreditación Institucional</h4>
-            <div className="saimo-footer-box">
+            <h4 className="footer-col-title">Rigor Metodológico</h4>
+            <div className="audit-footer-box">
               <ShieldCheck size={28} className="text-cyan" />
               <div>
-                <strong>Miembro Asociado SAIMO</strong>
-                <p>Sociedad Argentina de Investigadores de Marketing y Opinión</p>
+                <strong>Auditoría & Relevamiento</strong>
+                <p>Estándares normativos de alta calidad y supervisión directa en campo</p>
               </div>
             </div>
             <div className="footer-data-fiscal">

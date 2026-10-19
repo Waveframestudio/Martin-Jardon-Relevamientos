@@ -39,7 +39,7 @@
   align-items: center;
 }
 
-.badge-saimo {
+.badge-audit-quality {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -82,18 +82,18 @@
 
 /* Main Navigation */
 .navbar-main {
-  background: rgba(7, 13, 24, 0.8);
+  background: rgba(7, 13, 24, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-light);
-  padding: 14px 0;
+  padding: 16px 0;
   transition: all var(--transition-normal);
 }
 
 .navbar-header.is-scrolled .navbar-main {
-  background: rgba(7, 13, 24, 0.95);
-  padding: 10px 0;
-  border-bottom-color: rgba(56, 189, 248, 0.2);
+  background: rgba(7, 13, 24, 0.96);
+  padding: 12px 0;
+  border-bottom-color: rgba(56, 189, 248, 0.25);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -103,32 +103,45 @@
   justify-content: space-between;
 }
 
-/* Brand Logo */
+/* Brand Logo - Made larger and prominent per client feedback */
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
+  transition: transform var(--transition-fast);
 }
 
 .brand-icon-wrap {
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
   background: transparent;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  padding: 2px;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  border: none;
+  padding: 0;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: none;
+  filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.4));
+  transition: all var(--transition-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand-logo:hover {
+    transform: translateY(-1px);
+  }
+
+  .brand-logo:hover .brand-icon-wrap {
+    filter: drop-shadow(0 0 22px rgba(56, 189, 248, 0.65)) brightness(1.1);
+  }
 }
 
 .brand-svg-icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .brand-text {
@@ -138,15 +151,15 @@
 
 .brand-name {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.42rem;
+  font-weight: 800;
   color: var(--text-primary);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 .brand-sub {
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   color: var(--accent-cyan);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -211,10 +224,12 @@
   transition: all var(--transition-normal);
 }
 
-.btn-quote:hover {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 22px rgba(2, 132, 199, 0.5);
+@media (hover: hover) and (pointer: fine) {
+  .btn-quote:hover {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(2, 132, 199, 0.5);
+  }
 }
 
 .mobile-toggle {
@@ -279,20 +294,20 @@
 
 @media (max-width: 640px) {
   .navbar-main {
-    padding: 10px 0;
+    padding: 12px 0;
   }
   .brand-logo {
-    gap: 10px;
+    gap: 12px;
   }
   .brand-icon-wrap {
-    width: 38px;
-    height: 38px;
+    width: 50px;
+    height: 50px;
   }
   .brand-name {
-    font-size: 1.05rem;
+    font-size: 1.22rem;
   }
   .brand-sub {
-    font-size: 0.64rem;
+    font-size: 0.7rem;
   }
   .btn-quote {
     padding: 8px 14px;

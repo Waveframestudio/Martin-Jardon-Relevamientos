@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import LoadingScreen from './components/LoadingScreen';
+import AppDemoModal from './components/AppDemoModal';
 import './App.css';
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <AppDemoModal />
     </div>
   );
 }

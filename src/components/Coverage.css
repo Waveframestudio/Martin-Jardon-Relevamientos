@@ -127,9 +127,22 @@
   transition: all var(--transition-fast);
 }
 
-.btn-toggle-cities:hover {
-  background: rgba(56, 189, 248, 0.18);
-  border-color: var(--accent-cyan);
+@media (hover: hover) and (pointer: fine) {
+  .btn-toggle-cities:hover {
+    background: rgba(56, 189, 248, 0.18);
+    border-color: var(--accent-cyan);
+  }
+
+  .city-pill:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.3);
+    color: #ffffff;
+  }
+
+  .latam-country-box:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+    background: rgba(99, 102, 241, 0.08);
+  }
 }
 
 .city-pill {
@@ -143,12 +156,6 @@
   font-size: 0.84rem;
   color: var(--text-secondary);
   transition: all var(--transition-fast);
-}
-
-.city-pill:hover {
-  background: rgba(56, 189, 248, 0.1);
-  border-color: rgba(56, 189, 248, 0.3);
-  color: #ffffff;
 }
 
 .city-dot {
@@ -179,8 +186,8 @@
 
 .latam-country-box {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -188,9 +195,51 @@
   transition: all var(--transition-fast);
 }
 
-.latam-country-box:hover {
-  border-color: rgba(99, 102, 241, 0.35);
-  background: rgba(99, 102, 241, 0.08);
+.latam-country-featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(15, 27, 49, 0.7) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.2);
+}
+
+.latam-country-main-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.country-active-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-left: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.country-details-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  border-left: 2px solid var(--accent-cyan);
+}
+
+.country-service-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.country-service-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
 }
 
 .country-code-badge {

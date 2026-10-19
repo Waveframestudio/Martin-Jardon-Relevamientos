@@ -79,8 +79,13 @@ export default function Services() {
           <h2 className="section-title heading-display">
             Servicios de Relevamiento <span className="text-gradient">Especializados</span>
           </h2>
+          <div className="services-lead-highlight glass-panel">
+            <p className="services-opening-quote">
+              "Nuestros servicios aplican al exacto requerimiento del Cliente, adaptando o diseñando la metodología a aplicar en el Campo, según sea la necesidad."
+            </p>
+          </div>
           <p className="section-lead">
-            Metodología rigurosa y reportería ágil. Toque cualquier servicio para ver su ficha técnica y cotizar de inmediato.
+            Metodología rigurosa, protocolos a medida y reportería ágil. Toque cualquier servicio para ver su ficha técnica detallada y cotizar de inmediato.
           </p>
         </div>
 

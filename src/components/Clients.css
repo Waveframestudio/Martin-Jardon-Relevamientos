@@ -49,10 +49,22 @@
   opacity: 0.85;
 }
 
-.client-logo-item:hover::before {
-  opacity: 1;
-  transform: scale(1.18);
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, rgba(255, 255, 255, 0.14) 40%, transparent 75%);
+@media (hover: hover) and (pointer: fine) {
+  .client-logo-item:hover::before {
+    opacity: 1;
+    transform: scale(1.18);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, rgba(255, 255, 255, 0.14) 40%, transparent 75%);
+  }
+
+  .client-logo-item:hover .client-logo-img {
+    filter: brightness(1.12) contrast(1.08) 
+            drop-shadow(0 0 24px rgba(255, 255, 255, 0.4)) 
+            drop-shadow(0 0 38px rgba(56, 189, 248, 0.5));
+  }
+
+  .client-logo-item:hover .client-logo-img-enfoque {
+    transform: scale(1.42);
+  }
 }
 
 /* Big Logos with clean luminous aura glow */
@@ -73,21 +85,11 @@
   pointer-events: auto;
 }
 
-.client-logo-item:hover .client-logo-img {
-  filter: brightness(1.12) contrast(1.08) 
-          drop-shadow(0 0 24px rgba(255, 255, 255, 0.4)) 
-          drop-shadow(0 0 38px rgba(56, 189, 248, 0.5));
-}
-
 /* Enfoque Retail specific size boost */
 .client-logo-img-enfoque {
   max-width: 320px;
   max-height: 120px;
   transform: scale(1.35);
-}
-
-.client-logo-item:hover .client-logo-img-enfoque {
-  transform: scale(1.42);
 }
 
 /* Institutional SAIMO Banner */

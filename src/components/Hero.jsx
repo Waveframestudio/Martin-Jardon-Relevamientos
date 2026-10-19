@@ -24,7 +24,18 @@ export default function Hero() {
           </h1>
 
           <p className="hero-subtitle">
-            Auditorías de campo, Mystery Shopper y control de precios y góndola en tiempo real en Argentina y Latinoamérica con supervisión directa.
+            Auditorías de campo, Mystery Shopper y control de precios y góndola en tiempo real en Argentina y Latinoamérica con supervisión directa y a través de aplicación de lectura de códigos de barra, de{' '}
+            <button 
+              type="button"
+              className="hero-app-link" 
+              onClick={() => {
+                const event = new CustomEvent('open-app-demo-modal');
+                window.dispatchEvent(event);
+              }}
+              title="Ver demostración de pantallas de la app de lectura de código de barras"
+            >
+              desarrollo propio
+            </button>:
           </p>
 
           <div className="hero-actions">
@@ -91,8 +102,8 @@ export default function Hero() {
                     <Globe2 size={20} />
                   </div>
                   <div className="kpi-data">
-                    <span className="kpi-num">10 Países</span>
-                    <span className="kpi-label">Equipos en Latinoamérica</span>
+                    <span className="kpi-num">11 Países</span>
+                    <span className="kpi-label">Operaciones en Latinoamérica</span>
                   </div>
                 </div>
               </div>
@@ -122,10 +133,10 @@ export default function Hero() {
 
                 <div className="feed-item">
                   <div className="feed-item-left">
-                    <span className="feed-badge bg-indigo">Trade Marketing</span>
-                    <span className="feed-name">Material POP, Facing y Promotores</span>
+                    <span className="feed-badge bg-indigo">App Móvil EAN</span>
+                    <span className="feed-name">Lectura de Códigos & Planogramas</span>
                   </div>
-                  <span className="feed-status status-ok">Verificado</span>
+                  <span className="feed-status status-ok">En vivo</span>
                 </div>
               </div>
 
@@ -133,8 +144,8 @@ export default function Hero() {
               <div className="card-endorsement">
                 <ShieldCheck size={20} className="endorsement-icon" />
                 <div>
-                  <strong>Miembro Activo SAIMO</strong>
-                  <p>Sociedad Argentina de Investigadores de Marketing y Opinión</p>
+                  <strong>Estándares Normativos de Alta Calidad</strong>
+                  <p>Metodología y rigor profesional en captura de datos de campo</p>
                 </div>
               </div>
             </div>

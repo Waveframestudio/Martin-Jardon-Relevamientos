@@ -168,9 +168,35 @@ img {
   transition: all var(--transition-normal);
 }
 
-.glass-panel:hover {
-  border-color: var(--border-accent);
-  box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.2);
+@media (hover: hover) and (pointer: fine) {
+  .glass-panel:hover {
+    border-color: var(--border-accent);
+    box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.2);
+  }
+}
+
+/* Mobile & Touch Devices: Disable sticking hover transformations and unwanted shifts */
+@media (hover: none), (max-width: 960px) {
+  *, *::before, *::after {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .glass-panel:hover,
+  .pillar-card:hover,
+  .step-card:hover,
+  .service-accordion-card:hover,
+  .latam-country-box:hover,
+  .client-logo-item:hover,
+  .client-logo-item:hover .client-logo-img,
+  .client-logo-item:hover .client-logo-img-enfoque,
+  .btn-hero-primary:hover,
+  .btn-hero-secondary:hover,
+  .btn-quote:hover,
+  .btn-whatsapp-direct:hover,
+  .contact-touchpoint:hover,
+  .floating-wa-btn:hover .wa-icon-box {
+    transform: none !important;
+  }
 }
 
 /* Scrollbar */
