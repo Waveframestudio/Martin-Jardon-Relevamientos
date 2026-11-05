@@ -263,17 +263,55 @@
   .contact-main-card,
   .contact-secondary-panel {
     padding: 22px 18px;
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 26px rgba(2, 132, 199, 0.22);
   }
   .main-card-title {
     font-size: 1.2rem;
   }
   .btn-whatsapp-direct {
-    padding: 14px 16px;
+    padding: 15px 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(16, 185, 129, 0.65), 0 0 22px rgba(52, 211, 153, 0.45);
+    will-change: transform;
+    animation: waBtnPulseMobile 2.4s infinite ease-in-out;
+  }
+  .btn-whatsapp-direct::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 45%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 100%
+    );
+    transform: translate3d(-150%, 0, 0) rotate(25deg);
+    will-change: transform;
+    animation: buttonLightSweep 2.8s infinite ease-in-out;
+    pointer-events: none;
   }
   .btn-wa-title {
     font-size: 0.96rem;
   }
   .btn-wa-sub {
     font-size: 0.7rem;
+  }
+  .contact-touchpoint {
+    border-color: rgba(56, 189, 248, 0.22);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@keyframes waBtnPulseMobile {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0) scale3d(1.028, 1.028, 1);
   }
 }

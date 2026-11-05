@@ -51,13 +51,23 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero-section">
-      {/* Background Graphic Elements */}
+      {/* Dynamic Cyber Light Beams & Particle Grid */}
+      <div className="hero-cyber-beam hero-beam-1"></div>
+      <div className="hero-cyber-beam hero-beam-2"></div>
       <div className="hero-glow-blob hero-glow-1"></div>
       <div className="hero-glow-blob hero-glow-2"></div>
 
+      {/* Floating Ambient Live Radar Particles */}
+      <div className="hero-particle-constellation" aria-hidden="true">
+        <span className="p-particle p-1"></span>
+        <span className="p-particle p-2"></span>
+        <span className="p-particle p-3"></span>
+        <span className="p-particle p-4"></span>
+      </div>
+
       <div className="container hero-container">
         {/* Main Content */}
-        <div className="hero-content reveal-on-scroll is-revealed">
+        <div className="hero-content reveal-from-left is-revealed">
           <div className="hero-badge">
             <span className="badge-pulse"></span>
             <span className="badge-text">Organización de Relevamientos & Auditoría de Campo</span>
@@ -117,7 +127,7 @@ export default function Hero() {
         </div>
 
         {/* Hero Interactive Visual Dashboard Card */}
-        <div className="hero-visual reveal-on-scroll is-revealed reveal-delay-2">
+        <div className="hero-visual reveal-from-right is-revealed reveal-delay-2">
           <div className="hero-card-main glass-panel interactive-shimmer">
             <div className="card-header-bar">
               <div className="status-indicators">

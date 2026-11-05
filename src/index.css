@@ -81,60 +81,37 @@ img {
   content-visibility: auto;
 }
 
-/* Background Atmospheric Gradient Mesh with Continuous Fluid Motion */
+/* Background Atmospheric Gradient Mesh (GPU Hardware Accelerated, No Repaints) */
 body::before {
   content: '';
   position: fixed;
-  top: -15%;
-  left: -15%;
-  right: -15%;
-  bottom: -15%;
+  inset: 0;
   background: 
-    radial-gradient(circle at 18% 22%, rgba(2, 132, 199, 0.22) 0%, transparent 45%),
-    radial-gradient(circle at 82% 28%, rgba(56, 189, 248, 0.18) 0%, transparent 42%),
-    radial-gradient(circle at 50% 75%, rgba(99, 102, 241, 0.2) 0%, transparent 48%),
-    radial-gradient(circle at 80% 85%, rgba(16, 185, 129, 0.12) 0%, transparent 40%);
+    radial-gradient(circle at 20% 20%, rgba(2, 132, 199, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 25%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 50% 75%, rgba(99, 102, 241, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 80% 85%, rgba(16, 185, 129, 0.1) 0%, transparent 45%);
   pointer-events: none;
   z-index: -1;
-  animation: meshFlow 22s infinite ease-in-out alternate;
-  will-change: transform;
+  transform: translateZ(0);
 }
 
-@keyframes meshFlow {
-  0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-  }
-  50% {
-    transform: translate(2.5%, 3%) scale(1.05) rotate(1.2deg);
-  }
-  100% {
-    transform: translate(-2.5%, -1.5%) scale(1.02) rotate(-1.2deg);
-  }
-}
-
-/* Subtle Animated Grid Texture */
+/* Static High-Performance Cyber Grid */
 body::after {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 40px 40px;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 44px 44px;
   pointer-events: none;
   z-index: -1;
-  animation: gridDrift 65s infinite linear;
+  transform: translateZ(0);
 }
 
-@keyframes gridDrift {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 40px 40px;
-  }
+a, button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 a {
@@ -208,15 +185,16 @@ img {
   100% { background-position: 0% 50%; }
 }
 
-/* Common Card Style with High-End Glassmorphism */
+/* Common Card Style with Optimized GPU Layering */
 .glass-panel {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
-  transition: all var(--transition-normal);
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
   position: relative;
+  transform: translateZ(0);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -227,7 +205,7 @@ img {
   }
 }
 
-/* Touch active micro-feedback for mobile (satisfying tactile feel) */
+/* Touch active micro-feedback for mobile (exaggerated tactile feel) */
 @media (hover: none) {
   .btn-hero-primary:active,
   .btn-hero-secondary:active,
@@ -236,8 +214,9 @@ img {
   .filter-btn:active,
   .tab-btn:active,
   .demo-tab-btn:active {
-    transform: scale(0.97) !important;
-    transition: transform 0.1s ease !important;
+    transform: scale(0.92) translateY(2px) !important;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.7) !important;
+    transition: transform 0.08s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.08s ease !important;
   }
 }
 
@@ -287,37 +266,80 @@ img {
 
 @keyframes shimmerGlow {
   0% {
-    background-position: -200% 0;
+    transform: translate3d(-100%, 0, 0);
   }
   100% {
-    background-position: 200% 0;
+    transform: translate3d(100%, 0, 0);
   }
 }
 
 @keyframes livePulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  0%, 100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
   }
-  70% {
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  50% {
+    transform: scale3d(1.45, 1.45, 1);
+    opacity: 0.55;
   }
 }
 
-/* Scroll Reveal Classes (Driven by IntersectionObserver) */
+/* 60fps Hardware-Composited Scroll Reveal Engine (Zero Repaints) */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+/* Directional Modifiers */
+.reveal-from-left {
+  opacity: 0;
+  transform: translate3d(-28px, 0, 0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-from-left.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+.reveal-from-right {
+  opacity: 0;
+  transform: translate3d(28px, 0, 0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-from-right.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+.reveal-scale-up {
+  opacity: 0;
+  transform: scale3d(0.95, 0.95, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale-up.is-revealed {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  will-change: auto;
 }
 
 /* Staggered Children Delays */
@@ -326,7 +348,7 @@ img {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* Shimmer overlay effect for cards */
+/* Shimmer overlay effect for cards (100% GPU Transform, Zero Repaint) */
 .interactive-shimmer {
   position: relative;
   overflow: hidden;
@@ -337,33 +359,148 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     105deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.03) 40%,
-    rgba(56, 189, 248, 0.08) 50%,
-    rgba(255, 255, 255, 0.03) 60%,
-    transparent 100%
+    transparent 20%,
+    rgba(255, 255, 255, 0.04) 42%,
+    rgba(56, 189, 248, 0.12) 50%,
+    rgba(255, 255, 255, 0.04) 58%,
+    transparent 80%
   );
-  background-size: 200% 100%;
   pointer-events: none;
   opacity: 0;
+  transform: translate3d(-100%, 0, 0);
   transition: opacity 0.4s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .interactive-shimmer:hover::after {
     opacity: 1;
-    animation: shimmerGlow 2s infinite linear;
+    animation: shimmerGlow 2.2s infinite linear;
   }
 }
 
-/* Mobile optimizations: ensure smooth 60/120fps scrolling */
+/* Mobile exaggerated effects + 60/120fps Zero-Lag GPU Optimization */
 @media (max-width: 768px) {
-  .reveal-on-scroll {
-    transform: translateY(16px);
-    transition-duration: 0.5s;
+  body::before {
+    background: 
+      radial-gradient(circle at 15% 18%, rgba(2, 132, 199, 0.34) 0%, transparent 55%),
+      radial-gradient(circle at 85% 25%, rgba(56, 189, 248, 0.28) 0%, transparent 50%),
+      radial-gradient(circle at 50% 65%, rgba(99, 102, 241, 0.26) 0%, transparent 55%),
+      radial-gradient(circle at 80% 88%, rgba(16, 185, 129, 0.2) 0%, transparent 50%);
   }
+
+  /* Replace expensive backdrop-filter blur on scroll with ultra-fast opaque glass gradient */
+  .glass-panel {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: linear-gradient(165deg, rgba(15, 28, 52, 0.94) 0%, rgba(9, 17, 34, 0.97) 100%);
+  }
+
+  /* Static gradient text on mobile to avoid per-frame text re-rasterization while scrolling */
+  .text-gradient,
+  .text-gradient-cyan {
+    animation: none !important;
+    background-size: 100% auto;
+    text-shadow: 0 0 18px rgba(56, 189, 248, 0.28);
+  }
+
+  /* Exaggerated Scroll Reveal Animations on Mobile (Pure GPU transform + opacity) */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translate3d(0, 60px, 0) scale3d(0.92, 0.92, 1);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .reveal-from-left {
+    opacity: 0;
+    transform: translate3d(-65px, 24px, 0) scale3d(0.92, 0.92, 1);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reveal-from-left.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .reveal-from-right {
+    opacity: 0;
+    transform: translate3d(65px, 24px, 0) scale3d(0.92, 0.92, 1);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reveal-from-right.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .reveal-scale-up {
+    opacity: 0;
+    transform: scale3d(0.82, 0.82, 1) translate3d(0, 40px, 0);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reveal-scale-up.is-revealed {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+
+  /* Continuous pronounced shimmer on mobile cards via GPU translate3d */
+  .interactive-shimmer::after {
+    background: linear-gradient(
+      105deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.05) 40%,
+      rgba(56, 189, 248, 0.2) 50%,
+      rgba(255, 255, 255, 0.05) 60%,
+      transparent 80%
+    );
+    opacity: 1;
+    will-change: transform;
+    animation: shimmerGlow 3.2s infinite linear;
+  }
+
+  .top-cyber-scanline {
+    height: 2.5px;
+    opacity: 0.95;
+  }
+}
+
+/* Top Glowing Cyber Scanline Indicator (GPU Transform) */
+.top-cyber-scanline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.top-cyber-scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 10%, #38bdf8 40%, #818cf8 60%, transparent 90%);
+  will-change: transform;
+  animation: scanlineGlide 3.5s infinite linear;
+}
+
+@keyframes scanlineGlide {
+  0% { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(100%, 0, 0); }
 }

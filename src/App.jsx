@@ -30,12 +30,12 @@ export default function App() {
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.12
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const elements = document.querySelectorAll('.reveal-on-scroll');
+    const elements = document.querySelectorAll('.reveal-on-scroll, .reveal-from-left, .reveal-from-right, .reveal-scale-up');
     elements.forEach((el) => observer.observe(el));
 
     return () => {

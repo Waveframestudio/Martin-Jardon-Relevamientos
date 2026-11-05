@@ -232,10 +232,6 @@
   transition: transform 0.3s ease;
 }
 
-.pillar-card:hover .pillar-icon-box {
-  transform: scale(1.08) rotate(-2deg);
-}
-
 .pillar-tag {
   font-size: 0.68rem;
   font-weight: 700;
@@ -428,9 +424,11 @@
   transition: all var(--transition-fast);
 }
 
-.tab-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.07);
+@media (hover: hover) and (pointer: fine) {
+  .tab-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+  }
 }
 
 .tab-btn.is-active {
@@ -556,11 +554,42 @@
   color: var(--accent-cyan);
 }
 
-/* Responsive */
+/* Responsive - Pure GPU 120fps Exaggerated Animations on Mobile */
 @media (max-width: 960px) {
   .pillars-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 22px;
+  }
+  .pillar-card {
+    border-color: rgba(56, 189, 248, 0.38);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 22px rgba(2, 132, 199, 0.25);
+    will-change: transform;
+    animation: cardBreatheMobile 4.2s infinite ease-in-out;
+  }
+  .pillar-card::before {
+    height: 4px;
+    animation: none;
+  }
+  .pillar-glass-glow {
+    width: 210px;
+    height: 210px;
+    filter: none !important;
+    will-change: transform, opacity;
+    animation: ambientPulseGlowMobile 3.2s infinite ease-in-out alternate;
+  }
+  .pillar-accent-cyan .pillar-glass-glow {
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.45) 0%, transparent 70%);
+  }
+  .pillar-accent-emerald .pillar-glass-glow {
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.45) 0%, transparent 70%);
+  }
+  .pillar-accent-indigo .pillar-glass-glow {
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.45) 0%, transparent 70%);
+  }
+  .pillar-icon-box {
+    will-change: transform;
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+    animation: iconFloatMobile 3.5s infinite ease-in-out;
   }
   .process-steps-row {
     flex-direction: column;
@@ -569,10 +598,52 @@
   .step-connector {
     transform: rotate(90deg);
     margin: 4px 0;
+    will-change: transform, opacity;
+    animation: arrowGlideVertical 1.5s infinite ease-in-out;
   }
   .about-interactive-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+}
+
+@keyframes cardBreatheMobile {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) scale3d(1.022, 1.022, 1);
+  }
+}
+
+@keyframes ambientPulseGlowMobile {
+  0% {
+    opacity: 0.45;
+    transform: scale3d(0.95, 0.95, 1);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scale3d(1.38, 1.38, 1);
+  }
+}
+
+@keyframes iconFloatMobile {
+  0%, 100% {
+    transform: scale3d(1, 1, 1) rotate(0deg);
+  }
+  50% {
+    transform: scale3d(1.14, 1.14, 1) rotate(-5deg);
+  }
+}
+
+@keyframes arrowGlideVertical {
+  0%, 100% {
+    transform: rotate(90deg) translate3d(-4px, 0, 0) scale3d(1, 1, 1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: rotate(90deg) translate3d(7px, 0, 0) scale3d(1.25, 1.25, 1);
+    opacity: 1;
   }
 }
 

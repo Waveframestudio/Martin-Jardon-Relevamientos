@@ -111,7 +111,7 @@ export default function About() {
           {highlights.map((item, idx) => (
             <div 
               key={idx} 
-              className={`pillar-card pillar-accent-${item.accent} reveal-on-scroll reveal-delay-${idx + 1}`}
+              className={`pillar-card pillar-accent-${item.accent} reveal-scale-up reveal-delay-${idx + 1}`}
             >
               <div className="pillar-glass-glow"></div>
               
@@ -137,7 +137,7 @@ export default function About() {
         </div>
 
         {/* Visual Process Flow Diagram */}
-        <div className="process-flow-banner glass-panel reveal-on-scroll reveal-delay-2">
+        <div className="process-flow-banner glass-panel reveal-from-left reveal-delay-2">
           <div className="process-flow-header">
             <div className="flow-badge">
               <Cpu size={14} />

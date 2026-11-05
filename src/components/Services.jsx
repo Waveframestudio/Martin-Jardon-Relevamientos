@@ -90,7 +90,7 @@ export default function Services() {
         </div>
 
         {/* Category Filters */}
-        <div className="category-filters reveal-on-scroll reveal-delay-1">
+        <div className="category-filters reveal-scale-up reveal-delay-1">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -103,7 +103,7 @@ export default function Services() {
         </div>
 
         {/* Services Accordion List */}
-        <div className="services-accordion-list reveal-on-scroll reveal-delay-2">
+        <div className="services-accordion-list reveal-scale-up reveal-delay-2">
           {filteredServices.map((service, sIdx) => {
             const isExpanded = expandedServiceId === service.id;
 

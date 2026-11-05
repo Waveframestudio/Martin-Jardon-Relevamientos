@@ -135,6 +135,7 @@ export default function Navbar() {
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+          <div className="top-cyber-scanline"></div>
         </div>
       </nav>
 

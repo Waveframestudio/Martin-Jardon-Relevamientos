@@ -24,7 +24,7 @@ export default function Coverage() {
         {/* Stats Row */}
         <div className="coverage-stats-row">
           {coverage.highlights.map((h, i) => (
-            <div key={i} className={`cov-stat-card glass-panel interactive-shimmer reveal-on-scroll reveal-delay-${i + 1}`}>
+            <div key={i} className={`cov-stat-card glass-panel interactive-shimmer reveal-scale-up reveal-delay-${i + 1}`}>
               <span className="stat-number text-gradient-cyan">{h.number}</span>
               <span className="stat-label">{h.label}</span>
             </div>
@@ -34,7 +34,7 @@ export default function Coverage() {
         {/* Two Columns: Argentina & Latam */}
         <div className="coverage-grid">
           {/* Argentina Block */}
-          <div className="coverage-card glass-panel reveal-on-scroll reveal-delay-2">
+          <div className="coverage-card glass-panel reveal-from-left reveal-delay-1">
             <div className="card-top-header">
               <div className="card-header-icon-box">
                 <MapPin size={24} />
