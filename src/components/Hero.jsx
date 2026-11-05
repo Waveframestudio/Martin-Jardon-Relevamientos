@@ -1,9 +1,54 @@
-import React from 'react';
-import { ArrowRight, BarChart3, Database, Globe2, ShieldCheck, CheckCircle2, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, BarChart3, Database, Globe2, ShieldCheck, CheckCircle2, ChevronRight, Activity, Radio } from 'lucide-react';
 import { companyData } from '../data/companyData';
 import './Hero.css';
 
 export default function Hero() {
+  const liveFeeds = [
+    {
+      badge: 'Mystery Shopper',
+      badgeClass: 'bg-cyan',
+      name: 'Auditoría en Carrefour San Martín',
+      status: 'En curso',
+      statusClass: 'status-ok',
+      time: 'hace 2 min'
+    },
+    {
+      badge: 'Precios & Góndola',
+      badgeClass: 'bg-emerald',
+      name: 'Alerta Quiebre Stock: Cuidado Bebé',
+      status: 'Instantáneo',
+      statusClass: 'status-alert',
+      time: 'hace 5 min'
+    },
+    {
+      badge: 'App Móvil EAN',
+      badgeClass: 'bg-indigo',
+      name: 'Planograma auditado: 12 SKUs validados',
+      status: 'En vivo',
+      statusClass: 'status-ok',
+      time: 'hace 1 min'
+    },
+    {
+      badge: 'Relevamiento Federal',
+      badgeClass: 'bg-amber',
+      name: 'Plaza Córdoba & Rosario sincronizadas',
+      status: 'Completado',
+      statusClass: 'status-ok',
+      time: 'hace 8 min'
+    }
+  ];
+
+  const [activeFeedIndex, setActiveFeedIndex] = useState(0);
+
+  // Cycle feeds dynamically for an ultra-alive executive dashboard feel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFeedIndex((prev) => (prev + 1) % liveFeeds.length);
+    }, 3800);
+    return () => clearInterval(interval);
+  }, [liveFeeds.length]);
+
   return (
     <section id="hero" className="hero-section">
       {/* Background Graphic Elements */}
@@ -12,14 +57,14 @@ export default function Hero() {
 
       <div className="container hero-container">
         {/* Main Content */}
-        <div className="hero-content">
+        <div className="hero-content reveal-on-scroll is-revealed">
           <div className="hero-badge">
             <span className="badge-pulse"></span>
             <span className="badge-text">Organización de Relevamientos & Auditoría de Campo</span>
           </div>
 
           <h1 className="hero-title heading-display">
-            La Información por Especialistas. <br />
+            La Información por Especialistas. <span className="hero-title-break"><br /></span>
             <span className="text-gradient">Su Socio Estratégico en el Punto de Venta.</span>
           </h1>
 
@@ -72,8 +117,8 @@ export default function Hero() {
         </div>
 
         {/* Hero Interactive Visual Dashboard Card */}
-        <div className="hero-visual">
-          <div className="hero-card-main glass-panel">
+        <div className="hero-visual reveal-on-scroll is-revealed reveal-delay-2">
+          <div className="hero-card-main glass-panel interactive-shimmer">
             <div className="card-header-bar">
               <div className="status-indicators">
                 <span className="dot dot-red"></span>
@@ -81,7 +126,9 @@ export default function Hero() {
                 <span className="dot dot-green"></span>
               </div>
               <div className="card-status-tag">
-                <span className="live-dot"></span> Relevamientos en Directo
+                <span className="live-dot pulse-animation"></span>
+                <span className="live-tag-text">Relevamientos en Directo</span>
+                <Radio size={13} className="text-cyan radio-icon-live" />
               </div>
             </div>
 
@@ -108,35 +155,34 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Mock Dashboard Feed */}
+              {/* Dynamic Live Activity Feed */}
               <div className="dashboard-feed">
                 <div className="feed-title">
-                  <span>Módulos de Auditoría Activos</span>
-                  <Database size={15} className="text-dim" />
+                  <div className="feed-title-left">
+                    <Activity size={14} className="text-cyan" />
+                    <span>Módulos de Auditoría Activos</span>
+                  </div>
+                  <span className="feed-count-badge">4 activos</span>
                 </div>
                 
-                <div className="feed-item">
-                  <div className="feed-item-left">
-                    <span className="feed-badge bg-cyan">Mystery Shopper</span>
-                    <span className="feed-name">Control de Experiencia & Protocolos</span>
-                  </div>
-                  <span className="feed-status status-ok">En curso</span>
-                </div>
-
-                <div className="feed-item">
-                  <div className="feed-item-left">
-                    <span className="feed-badge bg-emerald">Precios & Góndola</span>
-                    <span className="feed-name">Alertas de Quiebre de Stock</span>
-                  </div>
-                  <span className="feed-status status-alert">Instantáneo</span>
-                </div>
-
-                <div className="feed-item">
-                  <div className="feed-item-left">
-                    <span className="feed-badge bg-indigo">App Móvil EAN</span>
-                    <span className="feed-name">Lectura de Códigos & Planogramas</span>
-                  </div>
-                  <span className="feed-status status-ok">En vivo</span>
+                <div className="feed-items-stream">
+                  {liveFeeds.map((feed, idx) => {
+                    const isCurrent = idx === activeFeedIndex;
+                    return (
+                      <div 
+                        key={idx} 
+                        className={`feed-item ${isCurrent ? 'is-active-feed' : ''}`}
+                      >
+                        <div className="feed-item-left">
+                          <span className={`feed-badge ${feed.badgeClass}`}>{feed.badge}</span>
+                          <span className="feed-name">{feed.name}</span>
+                        </div>
+                        <div className="feed-item-right">
+                          <span className={`feed-status ${feed.statusClass}`}>{feed.status}</span>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 

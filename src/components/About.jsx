@@ -91,12 +91,12 @@ export default function About() {
     <section id="nosotros" className="about-section">
       <div className="container">
         {/* Section Header */}
-        <div className="section-head text-center">
+        <div className="section-head text-center reveal-on-scroll">
           <span className="section-kicker">Trayectoria & Filosofía</span>
           <h2 className="section-title heading-display">
             Somos su <span className="text-gradient">"Socio Estratégico"</span>
           </h2>
-          <div className="about-manifesto-box glass-panel">
+          <div className="about-manifesto-box glass-panel interactive-shimmer">
             <p className="about-primary-quote">
               "Somos un grupo de personas con experiencia sólida en relevamiento de datos, información y Variables observables adquirida en consultoras de primera línea a través de más de 20 años, con amplios conocimientos en metodologías y técnicas de toma de datos y observación."
             </p>
@@ -111,7 +111,7 @@ export default function About() {
           {highlights.map((item, idx) => (
             <div 
               key={idx} 
-              className={`pillar-card pillar-accent-${item.accent}`}
+              className={`pillar-card pillar-accent-${item.accent} reveal-on-scroll reveal-delay-${idx + 1}`}
             >
               <div className="pillar-glass-glow"></div>
               
@@ -137,7 +137,7 @@ export default function About() {
         </div>
 
         {/* Visual Process Flow Diagram */}
-        <div className="process-flow-banner glass-panel">
+        <div className="process-flow-banner glass-panel reveal-on-scroll reveal-delay-2">
           <div className="process-flow-header">
             <div className="flow-badge">
               <Cpu size={14} />
@@ -167,7 +167,7 @@ export default function About() {
         </div>
 
         {/* Interactive Tabs for Principles */}
-        <div className="principles-interactive-card glass-panel">
+        <div className="principles-interactive-card glass-panel reveal-on-scroll reveal-delay-3">
           <div className="interactive-tabs-bar">
             <button 
               className={`tab-btn ${activeTab === 'objetivo' ? 'is-active' : ''}`}

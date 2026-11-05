@@ -1,10 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, ShieldCheck, MapPin, Phone } from 'lucide-react';
+import { 
+  ArrowUpRight, 
+  ShieldCheck, 
+  MapPin, 
+  Phone, 
+  Menu, 
+  X, 
+  Home, 
+  Users2, 
+  Layers, 
+  Globe2, 
+  Award, 
+  Send, 
+  MessageSquare, 
+  Sparkles,
+  ChevronRight
+} from 'lucide-react';
 import { companyData } from '../data/companyData';
 import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,17 +31,35 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
-    { name: 'Inicio', href: '#hero' },
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Cobertura', href: '#cobertura' },
-    { name: 'Clientes', href: '#clientes' },
-    { name: 'Contacto', href: '#contacto' }
+    { name: 'Inicio', href: '#hero', subtitle: 'Portada ejecutiva', icon: Home },
+    { name: 'Nosotros', href: '#nosotros', subtitle: 'Metodología y pilares', icon: Users2 },
+    { name: 'Servicios', href: '#servicios', subtitle: 'Auditoría & Mystery Shopper', icon: Layers },
+    { name: 'Cobertura', href: '#cobertura', subtitle: 'Argentina & Latinoamérica', icon: Globe2 },
+    { name: 'Clientes', href: '#clientes', subtitle: 'Casos y sellos SAIMO', icon: Award },
+    { name: 'Contacto', href: '#contacto', subtitle: 'Cotización en 24h', icon: Send }
   ];
 
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
+    <>
     <header className={`navbar-header ${scrolled ? 'is-scrolled' : ''}`}>
+
       {/* Top Banner with direct status and coverage */}
       <div className="navbar-top-bar">
         <div className="container top-bar-content">
@@ -78,7 +113,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Action Button */}
+          {/* Action Button & Mobile Toggle */}
           <div className="nav-actions">
             <a 
               href={companyData.contact.whatsappLink} 
@@ -89,9 +124,131 @@ export default function Navbar() {
               <span>Solicitar Relevamiento</span>
               <ArrowUpRight size={16} />
             </a>
+
+            <button 
+              type="button"
+              className="mobile-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
       </nav>
+
     </header>
+
+    {/* Premium Mobile Drawer Menu */}
+      <div 
+        className={`mobile-menu-overlay ${mobileMenuOpen ? 'is-open' : ''}`}
+        onClick={() => setMobileMenuOpen(false)}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <div 
+          className="mobile-menu-drawer"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Subtle Ambient Glows inside Drawer */}
+          <div className="drawer-glow-top"></div>
+          <div className="drawer-glow-bottom"></div>
+
+          {/* Drawer Top Header with Brand */}
+          <div className="mobile-menu-header">
+            <div className="drawer-brand-row">
+              <div className="drawer-brand-icon">
+                <img 
+                  src="/logo-remastered.webp" 
+                  alt="Martín Jardón Logo" 
+                  width="36" 
+                  height="36" 
+                  loading="eager"
+                />
+              </div>
+              <div className="brand-text">
+                <span className="brand-name">{companyData.name}</span>
+                <span className="brand-sub">{companyData.subtitle}</span>
+              </div>
+            </div>
+            <button 
+              type="button"
+              className="mobile-drawer-close"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Cerrar menú"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          {/* Live Status Pill in Drawer */}
+          <div className="drawer-status-pill">
+            <span className="drawer-live-dot"></span>
+            <span className="drawer-status-text">Operaciones activas en tiempo real</span>
+          </div>
+
+          {/* Navigation Links with Icons & Subtitles */}
+          <div className="mobile-menu-links">
+            {navLinks.map((link, idx) => {
+              const IconComp = link.icon;
+              return (
+                <a 
+                  key={link.name} 
+                  href={link.href} 
+                  className="mobile-nav-link"
+                  onClick={handleLinkClick}
+                  style={{ animationDelay: `${0.06 * idx}s` }}
+                >
+                  <div className="mobile-link-left">
+                    <div className="mobile-link-icon-box">
+                      <IconComp size={18} />
+                    </div>
+                    <div className="mobile-link-texts">
+                      <span className="mobile-link-title">{link.name}</span>
+                      <span className="mobile-link-sub">{link.subtitle}</span>
+                    </div>
+                  </div>
+                  <ChevronRight size={16} className="mobile-nav-arrow" />
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Drawer Footer with High-Impact WhatsApp CTA and Contact */}
+          <div className="mobile-menu-footer">
+            <a 
+              href={companyData.contact.whatsappLink}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mobile-drawer-cta"
+              onClick={handleLinkClick}
+            >
+              <div className="drawer-cta-content">
+                <div className="drawer-cta-icon-wrap">
+                  <MessageSquare size={18} />
+                </div>
+                <div className="drawer-cta-texts">
+                  <span className="drawer-cta-title">Cotizar por WhatsApp</span>
+                  <span className="drawer-cta-sub">Respuesta inmediata directa</span>
+                </div>
+              </div>
+              <ArrowUpRight size={17} className="drawer-cta-arrow" />
+            </a>
+
+            <div className="drawer-meta-row">
+              <a href={`tel:${companyData.contact.phoneRaw}`} className="drawer-meta-item">
+                <Phone size={13} className="text-cyan" />
+                <span>{companyData.contact.phoneFormatted}</span>
+              </a>
+              <span className="drawer-meta-divider">•</span>
+              <span className="drawer-meta-item">
+                <MapPin size={13} className="text-cyan" />
+                <span>AR & Latam</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

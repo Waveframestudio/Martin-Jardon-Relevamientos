@@ -11,7 +11,7 @@ export default function Coverage() {
     <section id="cobertura" className="coverage-section">
       <div className="container">
         {/* Section Header */}
-        <div className="section-head text-center">
+        <div className="section-head text-center reveal-on-scroll">
           <span className="section-kicker">Despliegue Territorial</span>
           <h2 className="section-title heading-display">
             Cobertura a Nivel <span className="text-gradient">Nacional e Internacional</span>
@@ -24,7 +24,7 @@ export default function Coverage() {
         {/* Stats Row */}
         <div className="coverage-stats-row">
           {coverage.highlights.map((h, i) => (
-            <div key={i} className="cov-stat-card glass-panel">
+            <div key={i} className={`cov-stat-card glass-panel interactive-shimmer reveal-on-scroll reveal-delay-${i + 1}`}>
               <span className="stat-number text-gradient-cyan">{h.number}</span>
               <span className="stat-label">{h.label}</span>
             </div>
@@ -34,7 +34,7 @@ export default function Coverage() {
         {/* Two Columns: Argentina & Latam */}
         <div className="coverage-grid">
           {/* Argentina Block */}
-          <div className="coverage-card glass-panel">
+          <div className="coverage-card glass-panel reveal-on-scroll reveal-delay-2">
             <div className="card-top-header">
               <div className="card-header-icon-box">
                 <MapPin size={24} />
@@ -72,7 +72,7 @@ export default function Coverage() {
           </div>
 
           {/* Latam Block */}
-          <div className="coverage-card glass-panel">
+          <div className="coverage-card glass-panel reveal-on-scroll reveal-delay-3">
             <div className="card-top-header">
               <div className="card-header-icon-box bg-indigo-icon">
                 <Globe size={24} />

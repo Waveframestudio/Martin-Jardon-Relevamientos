@@ -25,7 +25,7 @@ export default function Contact() {
     <section id="contacto" className="contact-section">
       <div className="container">
         {/* Section Header */}
-        <div className="section-head text-center">
+        <div className="section-head text-center reveal-on-scroll">
           <span className="section-kicker">Contacto Directo</span>
           <h2 className="section-title heading-display">
             Inicie su Consulta <span className="text-gradient">de inmediato</span>
@@ -37,7 +37,7 @@ export default function Contact() {
 
         <div className="contact-layout-grid">
           {/* Main Direct WhatsApp Hero Card */}
-          <div className="contact-main-card glass-panel">
+          <div className="contact-main-card glass-panel interactive-shimmer reveal-on-scroll reveal-delay-1">
             <div className="main-card-badge">
               <Zap size={14} />
               <span>Canal Prioritario & Respuesta Inmediata</span>
@@ -80,7 +80,7 @@ export default function Contact() {
           </div>
 
           {/* Secondary Channels Column */}
-          <div className="contact-secondary-panel glass-panel">
+          <div className="contact-secondary-panel glass-panel reveal-on-scroll reveal-delay-2">
             <h4 className="secondary-panel-title">Otros Canales de Contacto</h4>
             <p className="secondary-panel-desc">
               Canales corporativos y acreditación profesional para pliegos y solicitudes formales.

@@ -163,6 +163,20 @@
   height: 6px;
   border-radius: 50%;
   background-color: var(--accent-cyan);
+  box-shadow: 0 0 6px var(--accent-cyan);
+  animation: radarPing 3s infinite ease-out;
+}
+
+@keyframes radarPing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(56, 189, 248, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
 }
 
 .coverage-card-bottom {
@@ -213,12 +227,24 @@
   font-weight: 700;
   color: var(--accent-cyan);
   background: rgba(56, 189, 248, 0.15);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.4);
   padding: 2px 8px;
   border-radius: var(--radius-full);
   margin-left: auto;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  animation: tagPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes tagPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4);
+    border-color: rgba(56, 189, 248, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+    border-color: rgba(56, 189, 248, 0.7);
+  }
 }
 
 .country-details-box {

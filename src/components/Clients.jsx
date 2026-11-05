@@ -38,7 +38,7 @@ export default function Clients() {
     <section id="clientes" className="clients-section">
       <div className="container">
         {/* Section Header */}
-        <div className="section-head text-center">
+        <div className="section-head text-center reveal-on-scroll">
           <span className="section-kicker">Confianza & Respaldo</span>
           <h2 className="section-title heading-display">
             Empresas que Confían en <span className="text-gradient">Nuestro Trabajo</span>
@@ -49,7 +49,7 @@ export default function Clients() {
         </div>
 
         {/* Floating Client Logos without boxes or cards */}
-        <div className="clients-logos-cloud">
+        <div className="clients-logos-cloud reveal-on-scroll reveal-delay-2">
           {clientLogos.map((client, idx) => (
             <div 
               key={idx} 
@@ -72,7 +72,7 @@ export default function Clients() {
         </div>
 
         {/* Institutional Trust Banner without SAIMO */}
-        <div className="association-banner glass-panel">
+        <div className="association-banner glass-panel interactive-shimmer reveal-on-scroll reveal-delay-3">
           <div className="assoc-content">
             <div className="assoc-icon-wrap">
               <Award size={36} />

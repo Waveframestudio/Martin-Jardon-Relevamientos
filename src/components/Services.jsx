@@ -74,12 +74,12 @@ export default function Services() {
     <section id="servicios" className="services-section">
       <div className="container">
         {/* Section Header */}
-        <div className="section-head text-center">
+        <div className="section-head text-center reveal-on-scroll">
           <span className="section-kicker">Catálogo Desplegable</span>
           <h2 className="section-title heading-display">
             Servicios de Relevamiento <span className="text-gradient">Especializados</span>
           </h2>
-          <div className="services-lead-highlight glass-panel">
+          <div className="services-lead-highlight glass-panel interactive-shimmer">
             <p className="services-opening-quote">
               "Nuestros servicios aplican al exacto requerimiento del Cliente, adaptando o diseñando la metodología a aplicar en el Campo, según sea la necesidad."
             </p>
@@ -90,7 +90,7 @@ export default function Services() {
         </div>
 
         {/* Category Filters */}
-        <div className="category-filters">
+        <div className="category-filters reveal-on-scroll reveal-delay-1">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -103,8 +103,8 @@ export default function Services() {
         </div>
 
         {/* Services Accordion List */}
-        <div className="services-accordion-list">
-          {filteredServices.map((service) => {
+        <div className="services-accordion-list reveal-on-scroll reveal-delay-2">
+          {filteredServices.map((service, sIdx) => {
             const isExpanded = expandedServiceId === service.id;
 
             return (
@@ -112,6 +112,7 @@ export default function Services() {
                 key={service.id} 
                 id={`service-card-${service.id}`}
                 className={`service-accordion-card glass-panel ${isExpanded ? 'is-expanded' : ''}`}
+                style={{ animationDelay: `${sIdx * 0.04}s` }}
               >
                 {/* Header Row - Always Visible & Clickable */}
                 <div 

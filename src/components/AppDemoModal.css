@@ -476,23 +476,120 @@
 }
 
 @media (max-width: 768px) {
-  .screen-card {
-    grid-template-columns: 1fr;
-  }
-  .phone-mockup {
-    margin: 0 auto;
+  .app-modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
   }
   .app-modal-card {
-    padding: 20px 16px;
+    padding: 20px 14px;
+    max-height: 94vh;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .app-modal-header {
+    gap: 12px;
+    padding-bottom: 14px;
+  }
+  .app-modal-title-group {
+    gap: 12px;
+  }
+  .app-icon-badge {
+    width: 42px;
+    height: 42px;
+  }
+  .app-modal-heading {
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .app-modal-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .app-features-row {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .app-feature-pill {
+    padding: 5px 10px;
+    font-size: 0.74rem;
   }
   .app-demo-tabs-bar {
     flex-direction: column;
+    gap: 6px;
+    padding: 4px;
+    margin-bottom: 16px;
+  }
+  .demo-tab-btn {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    justify-content: flex-start;
+  }
+  .app-screen-container {
+    padding: 14px 10px;
+    margin-bottom: 16px;
+    overflow-x: hidden;
+  }
+  .screen-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+  }
+  .phone-mockup {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 270px;
+    box-sizing: border-box;
+  }
+  .screen-explanation h4 {
+    font-size: 1rem;
+  }
+  .screen-explanation p {
+    font-size: 0.82rem;
+  }
+  .excel-table-mockup {
+    padding: 10px 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .excel-table {
+    font-size: 0.68rem;
+    min-width: 420px;
   }
   .app-modal-footer {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    padding-top: 16px;
+  }
+  .modal-footer-note {
+    font-size: 0.74rem;
+    justify-content: center;
+    text-align: center;
   }
   .modal-cta-btn {
     justify-content: center;
+    width: 100%;
+    padding: 12px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .phone-mockup {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+  }
+  .phone-app-ui {
+    padding: 10px;
+  }
+  .app-modal-heading {
+    font-size: 0.96rem;
+  }
+  .app-modal-close {
+    width: 32px;
+    height: 32px;
   }
 }

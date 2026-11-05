@@ -50,6 +50,9 @@ html {
   font-size: 16px;
   color-scheme: dark;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -57,9 +60,19 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root, .app-root, main, section {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  box-sizing: border-box;
 }
 
 img {
@@ -68,23 +81,38 @@ img {
   content-visibility: auto;
 }
 
-/* Background Atmospheric Gradient Mesh */
+/* Background Atmospheric Gradient Mesh with Continuous Fluid Motion */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -15%;
+  left: -15%;
+  right: -15%;
+  bottom: -15%;
   background: 
-    radial-gradient(circle at 15% 15%, rgba(2, 132, 199, 0.15) 0%, transparent 45%),
-    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 50%);
+    radial-gradient(circle at 18% 22%, rgba(2, 132, 199, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 82% 28%, rgba(56, 189, 248, 0.18) 0%, transparent 42%),
+    radial-gradient(circle at 50% 75%, rgba(99, 102, 241, 0.2) 0%, transparent 48%),
+    radial-gradient(circle at 80% 85%, rgba(16, 185, 129, 0.12) 0%, transparent 40%);
   pointer-events: none;
   z-index: -1;
+  animation: meshFlow 22s infinite ease-in-out alternate;
+  will-change: transform;
 }
 
-/* Subtle Grid Texture */
+@keyframes meshFlow {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(2.5%, 3%) scale(1.05) rotate(1.2deg);
+  }
+  100% {
+    transform: translate(-2.5%, -1.5%) scale(1.02) rotate(-1.2deg);
+  }
+}
+
+/* Subtle Animated Grid Texture */
 body::after {
   content: '';
   position: fixed;
@@ -97,6 +125,16 @@ body::after {
   background-size: 40px 40px;
   pointer-events: none;
   z-index: -1;
+  animation: gridDrift 65s infinite linear;
+}
+
+@keyframes gridDrift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
 }
 
 a {
@@ -130,6 +168,8 @@ img {
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 @media (max-width: 640px) {
@@ -139,7 +179,7 @@ img {
   }
 }
 
-/* Typography Helpers */
+/* Typography Helpers with Continuous Dynamic Shimmer */
 .heading-display {
   font-family: var(--font-display);
   font-weight: 700;
@@ -147,18 +187,28 @@ img {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 80%, #0284c7 100%);
+  background: linear-gradient(135deg, #ffffff 10%, #38bdf8 45%, #818cf8 70%, #0284c7 90%, #ffffff 100%);
+  background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: textGradientShift 9s infinite linear;
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #38bdf8 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: textGradientShift 6s infinite linear;
 }
 
-/* Common Card Style */
+@keyframes textGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Common Card Style with High-End Glassmorphism */
 .glass-panel {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
@@ -166,36 +216,28 @@ img {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   transition: all var(--transition-normal);
+  position: relative;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .glass-panel:hover {
     border-color: var(--border-accent);
-    box-shadow: 0 12px 30px -10px rgba(2, 132, 199, 0.2);
+    box-shadow: 0 16px 36px -10px rgba(2, 132, 199, 0.35), 0 0 20px rgba(56, 189, 248, 0.15);
+    transform: translateY(-2px);
   }
 }
 
-/* Mobile & Touch Devices: Disable sticking hover transformations and unwanted shifts */
-@media (hover: none), (max-width: 960px) {
-  *, *::before, *::after {
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  .glass-panel:hover,
-  .pillar-card:hover,
-  .step-card:hover,
-  .service-accordion-card:hover,
-  .latam-country-box:hover,
-  .client-logo-item:hover,
-  .client-logo-item:hover .client-logo-img,
-  .client-logo-item:hover .client-logo-img-enfoque,
-  .btn-hero-primary:hover,
-  .btn-hero-secondary:hover,
-  .btn-quote:hover,
-  .btn-whatsapp-direct:hover,
-  .contact-touchpoint:hover,
-  .floating-wa-btn:hover .wa-icon-box {
-    transform: none !important;
+/* Touch active micro-feedback for mobile (satisfying tactile feel) */
+@media (hover: none) {
+  .btn-hero-primary:active,
+  .btn-hero-secondary:active,
+  .btn-quote:active,
+  .btn-whatsapp-direct:active,
+  .filter-btn:active,
+  .tab-btn:active,
+  .demo-tab-btn:active {
+    transform: scale(0.97) !important;
+    transition: transform 0.1s ease !important;
   }
 }
 
@@ -216,4 +258,112 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
+}
+
+/* =========================================================
+   ANIMATION KEYFRAMES & SCROLL REVEAL UTILITIES
+   ========================================================= */
+
+/* Ambient Floating Keyframes */
+@keyframes ambientFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes ambientPulseGlow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmerGlow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Scroll Reveal Classes (Driven by IntersectionObserver) */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Children Delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Shimmer overlay effect for cards */
+.interactive-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(56, 189, 248, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 60%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive-shimmer:hover::after {
+    opacity: 1;
+    animation: shimmerGlow 2s infinite linear;
+  }
+}
+
+/* Mobile optimizations: ensure smooth 60/120fps scrolling */
+@media (max-width: 768px) {
+  .reveal-on-scroll {
+    transform: translateY(16px);
+    transition-duration: 0.5s;
+  }
 }
