@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sitemap oficial
+Sitemap: http://www.martinjardon.com.ar/sitemap.xml
+Sitemap: https://www.martinjardon.com.ar/sitemap.xml
+
