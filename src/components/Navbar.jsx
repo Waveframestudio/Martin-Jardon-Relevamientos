@@ -89,7 +89,7 @@ export default function Navbar() {
           <a href="#hero" className="brand-logo" aria-label="Martín Jardón Inicio">
             <div className="brand-icon-wrap">
               <img 
-                src="/logo-remastered.webp" 
+                src="/logo.jpg" 
                 alt="Martín Jardón Logo" 
                 className="brand-svg-icon" 
                 width="40" 
@@ -160,7 +160,7 @@ export default function Navbar() {
             <div className="drawer-brand-row">
               <div className="drawer-brand-icon">
                 <img 
-                  src="/logo-remastered.webp" 
+                  src="/logo.jpg" 
                   alt="Martín Jardón Logo" 
                   width="36" 
                   height="36" 

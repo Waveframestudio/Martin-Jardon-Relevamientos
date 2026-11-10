@@ -17,7 +17,7 @@ export default function Footer() {
             <div className="brand-logo footer-logo">
               <div className="brand-icon-wrap">
                 <img 
-                  src="/logo-remastered.webp" 
+                  src="/logo.jpg" 
                   alt="Martín Jardón Logo" 
                   className="brand-svg-icon" 
                   width="40" 

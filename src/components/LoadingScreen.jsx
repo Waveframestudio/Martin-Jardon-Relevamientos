@@ -25,7 +25,7 @@ export default function LoadingScreen({ onFinish, minDuration = 1200 }) {
         <div className="loading-logo-halo"></div>
         <div className="loading-logo-wrap">
           <img 
-            src="/logo-remastered.webp" 
+            src="/logo_sinfondo.png" 
             alt="Martín Jardón Relevamientos" 
             className="loading-logo-img"
             width="90"
