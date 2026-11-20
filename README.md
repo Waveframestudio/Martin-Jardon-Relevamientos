@@ -1,18 +1,20 @@
-# Martín Jardón — Organización de Relevamientos
-
 <div align="center">
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![Lucide](https://img.shields.io/badge/Lucide_Icons-orange?style=for-the-badge&logo=lucide&logoColor=white)
-![Oxlint](https://img.shields.io/badge/Linter-Oxlint-cyan?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=for-the-badge)
+  <img src="./public/logo_sinfondo.png" alt="Martín Jardón — Organización de Relevamientos" width="160" />
 
-<p align="center">
-  <b>Plataforma web institucional y de presentación de servicios de auditoría de campo, Mystery Shopper e inteligencia comercial en Argentina y Latinoamérica.</b>
-</p>
+  # Martín Jardón — Organización de Relevamientos
 
-[🌐 Sitio Web Oficial](https://www.martinjardon.com.ar) • [📱 WhatsApp Directo](https://wa.me/5491158408320) • [💼 LinkedIn](https://www.linkedin.com/in/martin-jardon/)
+  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+  ![Lucide](https://img.shields.io/badge/Lucide_Icons-orange?style=for-the-badge&logo=lucide&logoColor=white)
+  ![Oxlint](https://img.shields.io/badge/Linter-Oxlint-cyan?style=for-the-badge)
+  ![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=for-the-badge)
+
+  <p align="center">
+    <b>Plataforma web institucional y de presentación de servicios de auditoría de campo, Mystery Shopper e inteligencia comercial en Argentina y Latinoamérica.</b>
+  </p>
+
+  [🌐 Sitio Web Oficial](https://www.martinjardon.com.ar) • [📱 WhatsApp Directo](https://wa.me/5491158408320) • [💼 LinkedIn](https://www.linkedin.com/in/martin-jardon/)
 
 </div>
 
